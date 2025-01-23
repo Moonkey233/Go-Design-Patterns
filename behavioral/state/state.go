@@ -13,9 +13,6 @@ type state interface {
 // door 门对象
 type door struct {
 	id           int
-	opened       state
-	closed       state
-	damaged      state
 	currentState state // 当前状态
 }
 
@@ -40,6 +37,7 @@ func (o *opened) open(d *door) {
 
 func (o *opened) close(d *door) {
 	fmt.Printf("%v关闭成功\n", d.id)
+	d.setState(&closed{})
 }
 
 // closed 关闭状态
@@ -47,6 +45,7 @@ type closed struct{}
 
 func (c *closed) open(d *door) {
 	fmt.Printf("%v开启成功\n", d.id)
+	d.setState(&opened{})
 }
 
 func (c *closed) close(d *door) {
