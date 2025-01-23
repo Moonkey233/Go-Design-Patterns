@@ -21,22 +21,21 @@ func (s *Subject) AddObserver(o Observer) {
 	s.observers = append(s.observers, o)
 }
 
-// 改变发布者的状态
-
+// UpdateContext 改变发布者的状态
 func (s *Subject) UpdateContext(content string) {
 	s.content = content
 	s.notify()
-}
-
-// Observer 通知订阅者接口
-type Observer interface {
-	Do(*Subject)
 }
 
 func (s *Subject) notify() {
 	for _, o := range s.observers {
 		o.Do(s)
 	}
+}
+
+// Observer 通知订阅者接口
+type Observer interface {
+	Do(*Subject)
 }
 
 // Reader 订阅者
