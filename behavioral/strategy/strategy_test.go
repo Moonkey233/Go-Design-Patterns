@@ -1,6 +1,6 @@
 package strategy
 
-func ExampleTravel() {
+func ExampleStrategy() {
 	walk := &Walk{}
 	Travel1 := NewTravel("小明", walk)
 	Travel1.traffic()

@@ -1,6 +1,6 @@
 package memento
 
-func ExampleText() {
+func ExampleMemento() {
 	text := &Text{
 		content: "how are you?",
 	}
