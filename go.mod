@@ -1,3 +1,3 @@
-module moonkey/Design-Patterns-of-Go
+module moonkey/Go-Design-Patterns
 
 go 1.23.3
