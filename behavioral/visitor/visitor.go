@@ -5,16 +5,25 @@ package visitor
 import "fmt"
 
 type Shape interface {
+	getName() string
 	accept(visitor)
 }
 
 type square struct{}
+
+func (s *square) getName() string {
+	return "square"
+}
 
 func (s *square) accept(v visitor) {
 	v.visitForSquare(s)
 }
 
 type circle struct{}
+
+func (c *circle) getName() string {
+	return "circle"
+}
 
 func (c *circle) accept(v visitor) {
 	v.visitForCircle(c)
@@ -28,19 +37,19 @@ type visitor interface {
 type sideCalculator struct{}
 
 func (a *sideCalculator) visitForSquare(s *square) {
-	fmt.Println("square side")
+	fmt.Printf("%v side\n", s.getName())
 }
 
-func (a *sideCalculator) visitForCircle(s *circle) {
-	fmt.Println("circle side")
+func (a *sideCalculator) visitForCircle(c *circle) {
+	fmt.Printf("%v side\n", c.getName())
 }
 
 type radiusCalculator struct{}
 
 func (a *radiusCalculator) visitForSquare(s *square) {
-	fmt.Println("square radius")
+	fmt.Printf("%v radius\n", s.getName())
 }
 
 func (a *radiusCalculator) visitForCircle(c *circle) {
-	fmt.Println("circle radius")
+	fmt.Printf("%v radius\n", c.getName())
 }
