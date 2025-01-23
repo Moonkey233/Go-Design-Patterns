@@ -90,7 +90,8 @@
 
 2. 进入任意设计模式的文件夹，阅读代码示例并运行：
     ```bash
-    go run <filename>.go
+    cd ./behavioral/chainofresponsibility/
+    go test
    
 3. 仔细阅读代码中注释，理解设计模式的实现方式与使用场景。
 
