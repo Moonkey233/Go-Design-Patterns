@@ -14,6 +14,7 @@ namespace proxy {
         return std::make_pair(403, "Forbidden");
     }
     void TestProxy() {
+        std::cout << "---------- TestProxy ----------" << std::endl;
         Application app{};
         const Nginx nginx(&app);
         std::vector<std::pair<std::string, std::string>> requests = {
@@ -26,5 +27,6 @@ namespace proxy {
             auto res = nginx.request(req.first, req.second);
             std::cout << "nginx: got response: " << res.first << ", " << res.second << std::endl;
         }
+        std::cout << std::endl;
     }
 }
