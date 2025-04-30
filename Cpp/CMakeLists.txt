@@ -3,4 +3,4 @@ project(Cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Cpp main.cpp structural/proxy.h structural/proxy.cpp)
+add_executable(Cpp main.cpp structural/proxy.cpp)
