@@ -86,11 +86,11 @@
 
 1. 克隆项目到本地：
     ```bash
-    git clone git@github.com:Moonkey233/Go-Design-Patterns.git
+    git clone git@github.com:Moonkey233/Design-Patterns.git
 
 2. 进入任意设计模式的文件夹，阅读代码示例并运行：
     ```bash
-    cd ./behavioral/chainofresponsibility/
+    cd ./Golang/structural/proxy/
     go test
    
 3. 仔细阅读代码中注释，理解设计模式的实现方式与使用场景。
